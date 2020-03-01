@@ -1,0 +1,24 @@
+@startuml
+
+actor "game user" as u
+
+card "game client" as c
+
+cloud "service" as ssss{
+    node "game server" as gs
+    node  "webview server" as ws
+    storage "session storage" as ss
+}
+
+
+
+gs -- ss
+ws -- ss #green
+
+u == c
+u == c #green
+
+c -- ws #green
+c -- gs
+
+@enduml
